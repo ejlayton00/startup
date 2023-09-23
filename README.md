@@ -10,8 +10,29 @@ Have you ever rolled some dice and were amazed by the result? Maybe you wanted t
 ## How it Works [TODO]
 ???
 
-## Features [TODO]
-???
+## Features
+You will be able to:
+- Login over a secure HTTPS connection
+- Create sets of dice
+- Roll those dice
+- View statistics of dice (average, median, percent of rolling a specific number)
+- Save sets of dice to your profile so you can edit or roll them later
+- View and roll other users' saved dice sets
 
-## Technologies [TODO]
-???
+## Technologies
+The following technologies will be used in this project.
+- HTML -- The Dice Roller will use HTML to correctly and accurately structure the application.
+    - Register/Login page
+    - Dice Viewer/Editor page to view, roll, and edit dice sets
+    - Explore page to look at dice sets that other people have made
+- CSS -- The Dice Roller will use CSS to style and make it look good by using good whitespace and color choice
+- JavaScript -- The Dice Roller will use JavaScript to login/register, roll and create dice sets, save dice sets, create statistics, and for backend database calls
+- Service -- The backend endpoints will be:
+    - Login/Register
+    - Retrieving saved dice sets
+    - Saving dice sets
+- Database -- The database for Dice Roller will store the users and dice sets to those users
+- Login/Register -- Users will not be able to save dice sets without being authenticated
+- Users -- User information will be confidentially and securely saved in the database
+- WebSocket -- As soon as a dice set is saved, it will be available to all other users
+- React -- Eventually the application will be ported to use React
