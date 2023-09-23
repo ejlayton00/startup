@@ -9,8 +9,8 @@ Have you ever rolled some dice and were amazed by the result? Maybe you wanted t
 ### Design
 ![Design mockup for the dice roller.](./images/StartupSpecification/DiceRollerMockup.png)
 
-### How it Works [TODO]
-???
+### How it Works
+![Server mockup for the dice roller.](./images/StartupSpecification/ServerMockup.drawio.png)
 
 ### Features
 You will be able to:
