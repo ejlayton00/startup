@@ -15,7 +15,7 @@
         
     </div>
     <div class="main-page">
-        <div class="column">Dice</div>
+        <div class="column"><h1>Dice</h1>
             <div>
                 <label for="num-dice">Number of Dice:</label>
                 <input type="number" id="num-dice" min="1" step="1">
@@ -34,9 +34,14 @@
             <div>
                 <label for="modifier">Enter a number:</label>
                 <input type="number" id="modifier" min="-999999" max="999999" step="1">
-              </div>
-        <div class="column">Roll</div>
-        <div class="column">Stats</div>
+            </div>
+            <div>
+                <button onclick="addDice()">Add Dice</button>
+                <div id="showDice"><!-- DICE WILL BE SHOWN HERE --></div>
+            </div>
+        </div>
+        <div class="column"><h1>Roll</h1></div>
+        <div class="column"><h1>Stats</h1></div>
     </div>
 </body>
 </html>
