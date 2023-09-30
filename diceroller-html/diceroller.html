@@ -45,17 +45,17 @@
                 <div id="showDice">
                     <!-- DICE WILL BE ADDED HERE VIA JAVASCRIPT -->
                     <!-- The following are temporary illustrations of what it might look like -->
-                    <img src="d4.png" alt="d4">
+                    <img src="d4-4.png" alt="d4">
                     <br />
-                    <img src="d6.png" alt="d6">
+                    <img src="d6-6.png" alt="d6">
                     <br />
-                    <img src="d8.png" alt="d8">
+                    <img src="d8-8.png" alt="d8">
                     <br />
-                    <img src="d10.png" alt="d10">
+                    <img src="d10-10.png" alt="d10">
                     <br />
-                    <img src="d12.png" alt="d12">
+                    <img src="d12-12.png" alt="d12">
                     <br />
-                    <img src="d20.png" alt="d20">
+                    <img src="d20-20.png" alt="d20">
                 </div>
                 <!-- show-modifier will update with addDice() function -->
                 <div class="show-modifier">+5</div>
@@ -66,9 +66,60 @@
             </div>
         </div>
         <hr />
-        <div class="column"><h2>Roll</h2></div>
+        <div class="column">
+            <h2>Roll Dice</h2>
+            <!--- rollDice() will use JavaScript to roll the dice added via AddDice(), which will then update the third column with the results of the rolls -->
+            <!-- Then, the table below will update to show the statistics of the roll. -->
+            <button onclick="rollDice()">Roll Dice</button>
+
+            <table>
+                <tr>
+                    <td>Average</td>
+                    <td id="average">0</td>
+                </tr>
+                <tr>
+                    <td>Median</td>
+                    <td id="median">0</td>
+                </tr>
+                <tr>
+                    <td>Minimum</td>
+                    <td id="min">0</td>
+                </tr>
+                <tr>
+                    <td>Maximum</td>
+                    <td id="max">0</td>
+                </tr>
+                <tr>
+                    <td>Current Result</td>
+                    <td id="currentResult">0</td>
+                </tr>
+                <tr>
+                    <td>Chance of Current Result (%)</td>
+                    <td id="chance">0%</td>
+                </tr>
+            </table>
+        </div>
         <hr />
-        <div class="column"><h2>Stats</h2></div>
+        <div class="column">
+            <h2>Dice Results</h2>
+
+            <img src="d4-2.png" alt="2 on a d4">
+            <br />
+            <img src="d6-5.png" alt="5 on a d6">
+            <br />
+            <img src="d8-1.png" alt="1 on a d8">
+            <br />
+            <img src="d10-3.png" alt="3 on a d10">
+            <br />
+            <img src="d12-9.png" alt="9 on a d12">
+            <br />
+            <img src="d20-18.png" alt="18 on a d20">
+
+            <br />
+            <div class="roll-modifier">+5</div>
+            =
+            <div class="total-result">43</div>
+        </div>
     </main>
     <footer>
         <hr />
