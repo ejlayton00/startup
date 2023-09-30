@@ -40,8 +40,11 @@
                 <input type="number" id="modifier" min="-100" max="100" step="1">
             </div>
             <div>
+                <!-- AddDice() will use JavaScript to update showDice div and display the newly added dice. -->
                 <button onclick="addDice()">Add Dice</button>
-                <div id="showDice"><!-- DICE WILL BE ADDED HERE VIA JAVASCRIPT -->
+                <div id="showDice">
+                    <!-- DICE WILL BE ADDED HERE VIA JAVASCRIPT -->
+                    <!-- The following are temporary illustrations of what it might look like -->
                     <img src="d4.png" alt="d4">
                     <br />
                     <img src="d6.png" alt="d6">
@@ -53,9 +56,13 @@
                     <img src="d12.png" alt="d12">
                     <br />
                     <img src="d20.png" alt="d20">
-
-                    <div class="show-modifier">+5</div>
                 </div>
+                <!-- show-modifier will update with addDice() function -->
+                <div class="show-modifier">+5</div>
+            </div>
+            <div>
+                <!-- Will send a call to the backend server and save the dice. -->
+                <button onclick="SaveDiceSet()">Save Dice Set</button>
             </div>
         </div>
         <hr />
