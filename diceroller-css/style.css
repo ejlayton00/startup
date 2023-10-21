@@ -70,14 +70,31 @@ main {
 }
 
 .menu-button {
-    margin: 5px; /* Add spacing between buttons */
-    padding: 10px 20px; /* Add padding to buttons for better spacing */
-    background-color: #333; /* Background color for buttons */
-    color: white; /* Text color for buttons */
-    border: none; /* Remove button borders */
-    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .menu-button:hover {
-    background-color: #555; /* Background color on hover for buttons */
+    background-color: #555;
+}
+
+.toggle-button {
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.toggle-button button {
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-button button:hover {
+    background-color: #333;
 }
