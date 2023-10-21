@@ -17,7 +17,42 @@
         </nav>
     </header>
 
-    <!-- Home Page Content Goes Here -->
+    <div class="login-signup-section">
+        <div class="toggle-button">
+            <button id="show-login">Login</button>
+            <button id="show-signup">Sign Up</button>
+        </div>
+        <!-- This section will start with Login, and will use javascript to switch between Login and Sign Up -->
+
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="signup-form">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="signup-username" required>
+
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <hr />
