@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+</head>
+<body>
+    <header>
+        <h1>Dice Roller</h1>
+        <h2>User: Temp User</h2>
+        <nav>
+            <menu>
+                <li><a href="diceroller.html">ROLL DICE</a></li>
+                <li><a href="explore.html">EXPLORE</a></li>
+                <li><a href="index.html">LOGOUT</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <hr />
+    <div class="explore-content">
+        <h2>Explore Saved Dice Sets</h2>
+        <div class="dice-set-list">
+            <!-- Example dice set entries, replace with dynamic data as the user scrolls -->
+            <div class="dice-set-entry">
+                <p>Saved by: User1</p>
+                <p>Date Saved: September 25, 2023</p>
+                <p>Set Details: 3d6, 1d10, Modifier: +2</p>
+                <button class="view-button" data-diceset-id="1" onclick="window.location.href = 'diceroller.html';">View Dice Set</button>
+            </div>
+            <div class="dice-set-entry">
+                <p>Saved by: User2</p>
+                <p>Date Saved: September 24, 2023</p>
+                <p>Set Details: 2d8, 2d12, Modifier: -3</p>
+                <button class="view-button" data-diceset-id="2" onclick="window.location.href = 'diceroller.html';">View Dice Set</button>
+            </div>
+            <!-- Add more entries as needed -->
+        </div>
+    </div>
+
+    <footer>
+        <hr />
+        <span class="text-reset">Authors:</span>
+        <br />
+        <a href="https://github.com/ejlayton00/startup/tree/main/diceroller-html">Github</a>
+    </footer>
+</body>
+</html>
