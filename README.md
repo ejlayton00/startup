@@ -38,3 +38,17 @@ The following technologies will be used in this project.
 - Users -- User information will be confidentially and securely saved in the database
 - WebSocket -- As soon as a dice set is saved, it will be available to all other users
 - React -- Eventually the application will be ported to use React
+
+### HTML Deliverable
+- Added DiceRoller, Explore, and Home/Index pages.
+- Home/Index page includes a mock up of Login and Sign Up functionality. To get to the rest of the application, one must enter all the information, then select "Login" or "Sign Up" buttons.
+    - Currently, the information must be included, but is not checked. Enter any value (besides nothing/null) to get access to the other pages.
+- Created a menu, where a user can go to Explore or DiceRoller, or logout (which will take them to the login/signup page).
+    - Above this menu is the current logged-in user.
+- DiceRoller shows a mock up of what the page will look like when selecting dice, rolling dice, viewing statistics, and saving the dice sets.
+    - All buttons do not work yet and are just placeholder.
+    - All inputs for the dice check all input so that it will be correct for the application.
+    - Added images for all the dice and their variations (i.e., d20 has 1, 2, 3, ..., 18, 19, 20).
+- Explore page has a mock up of what the saved dice sets will show when they are saved this way.
+    - This includes: user who saved the set, time saved (sorted by date), and a brief overview of the set.
+    - "View Dice Set" currently takes the user to DiceRoller, but will (in the future) load the chosen dice set.
