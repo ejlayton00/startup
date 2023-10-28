@@ -57,7 +57,7 @@
                     <img src="./images/d20/d20-20.png" alt="d20" width="100" height="auto">
                 </div>
                 <!-- show-modifier will update with addDice() function -->
-                <div class="show-modifier">+5</div>
+                <div class="roll-modifier">+5</div>
             </div>
             <div class="centered">
                 <!-- Will send a call to the backend server and save the dice. -->
@@ -68,7 +68,7 @@
             <h2>Roll Dice</h2>
             <!--- rollDice() will use JavaScript to roll the dice added via AddDice(), which will then update the third column with the results of the rolls -->
             <!-- Then, the table below will update to show the statistics of the roll. -->
-            <button onclick="rollDice()">Roll Dice</button>
+            <div class="centered"><button onclick="rollDice()">Roll Dice</button></div>
 
             <table>
                 <tr>
