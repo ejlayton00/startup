@@ -4,7 +4,7 @@ function login() {
 
     const passwordEl = document.querySelector("#login-password");
 
-    window.location.href = "index.html";
+    window.location.href = "diceroller.html";
 
     // TODO: send to websocket
 }  
@@ -17,7 +17,7 @@ function register() {
 
     const passwordEl = document.querySelector("#signup-password");
 
-    window.location.href = "index.html";
+    window.location.href = "diceroller.html";
 
     // TODO: send to websocket
 }

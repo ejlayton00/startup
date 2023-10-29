@@ -203,3 +203,9 @@ function calculateMaximum() {
 function calculateChance(totalResult, maximum) {
     return (1 - (totalResult / maximum)) * 100;
 }
+
+function updateLoggedInUser() {
+    const storedUsername = localStorage.getItem('userName');
+    const userNameElement = document.getElementById('user-info');
+    userNameElement.textContent = storedUsername;
+}
