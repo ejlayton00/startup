@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="headerfooter.css">
     <link rel="stylesheet" href="index.css">
+    <script src="login.js"></script>
 </head>
 <body>
     <header>
@@ -29,7 +30,7 @@
                     <label for="login-password">Password:</label>
                     <input type="password" id="login-password" name="login-password" required>
                     <br>
-                    <button type="submit">Login</button>
+                    <button type="submit" onclick="login()">Login</button>
                 </form>
             </div>
 
@@ -45,7 +46,7 @@
                     <label for="signup-password">Password:</label>
                     <input type="password" id="signup-password" name="signup-password" required>
                     <br>
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" onclick="register()">Sign Up</button>
                 </form>
             </div>
         </div>

@@ -60,3 +60,6 @@ The following technologies will be used in this project.
 - Added contrast through blacks, whites, and greys to many things.
 - Made sure images won't cause problems with resizing, grids, and columns.
 - Removed many "spacing" elements used in html files that are no longer needed (```<br>``` and ```<hr>``` elements).
+
+### JavaScript Deliverable
+TODO
