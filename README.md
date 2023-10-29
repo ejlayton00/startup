@@ -52,3 +52,11 @@ The following technologies will be used in this project.
 - Explore page has a mock up of what the saved dice sets will show when they are saved this way.
     - This includes: user who saved the set, time saved (sorted by date), and a brief overview of the set.
     - "View Dice Set" currently takes the user to DiceRoller, but will (in the future) load the chosen dice set.
+
+### CSS Deliverable
+- Formatted all headers, footers, and main content body.
+- Changed color and look of all buttons and links.
+- Made sizes of items responsive.
+- Added contrast through blacks, whites, and greys to many things.
+- Made sure images won't cause problems with resizing, grids, and columns.
+- Removed many "spacing" elements used in html files that are no longer needed (```<br>``` and ```<hr>``` elements).
