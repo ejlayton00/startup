@@ -206,6 +206,6 @@ function calculateChance(totalResult, maximum) {
 
 function updateLoggedInUser() {
     const storedUsername = localStorage.getItem('userName');
-    const userNameElement = document.getElementById('user-info');
-    userNameElement.textContent = storedUsername;
+    const userNameElement = document.querySelector(".user-info h2");
+    if (storedUsername) userNameElement.textContent = storedUsername;
 }
