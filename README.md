@@ -62,4 +62,12 @@ The following technologies will be used in this project.
 - Removed many "spacing" elements used in html files that are no longer needed (```<br>``` and ```<hr>``` elements).
 
 ### JavaScript Deliverable
-TODO
+- Added login and signup features (currently do nothing, but will send websocket data).
+    - Login and Signup are now on separate mini-pages for ease of use.
+- Created DiceSet class to hold all information needed for rolling, loading, saving, etc.
+- Added all dice rolling features (rolling, statistics, etc.).
+- Added loading dice sets from explore page into rolling page.
+- Added a way to load a dice set into the explore page (for future database and websocket use).
+- Added stubs for saving dice sets (which will go to future database and websocket).
+- Removed "median" statistic (was not interesting, needed, or helpful in any scenario).
+- Renamed "Chance of Roll" statistic to "Chance of Rolling Higher than Current Roll" for more interesting details.
