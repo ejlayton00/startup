@@ -1,4 +1,12 @@
-**GitHub**
-
-I didn't learn much, as I already have experience with Git and GitHub.
-Use ```ssh -i [.pem file] ubuntu@cs260diceroller.click``` to ssh into server.
+# Midterm Review
+- ```<link rel="stylesheet" href="styles.css">```
+- ```<script src="javascript.js"></script>```
+- ```<div [id="something" class="something"]>[insert content]</div>```
+- Difference between "#title" and ".grid": #title is an id; .grid is a class
+- Difference between padding and margin: margin is around the border of the object; padding is between border and content
+- Arrow syntax: ```((element) => { function(); });```
+- ```document.getElementByID("#id")``` gets the element of "#id" from the document
+- ```addEventListenenr("type", "listener")``` adds the function in "listener" to "type" (like "click")
+- CSS example: .div { background-color: red; }
+- IMG example: ```<img src='./images/image.png' href='link.html'>```
+- QuerySelector example: ```document.getElementByID("#byu").style.color = 'green';```
