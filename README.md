@@ -71,3 +71,11 @@ The following technologies will be used in this project.
 - Added stubs for saving dice sets (which will go to future database and websocket).
 - Removed "median" statistic (was not interesting, needed, or helpful in any scenario).
 - Renamed "Chance of Roll" statistic to "Chance of Rolling Higher than Current Roll" for more interesting details.
+
+### Service
+- Added index.js to function as node.js server
+- Frontend is now static middleware
+- Added a quick picsum photo generator to the login page
+    - This is a call to a third party endpoint
+- Added /loadsets and /saveset endpoints to manage saving and loading dice sets
+- All endpoints managed using fetch
