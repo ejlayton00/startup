@@ -116,7 +116,7 @@
     <script>
         let diceSet = loadDiceSet();
         if (diceSet == null) {
-            diceSet = new DiceSet("User1", "October 1st, 2023", [4, 6, 8], +1)
+            diceSet = getEmptySet();
         }
         loadDiceSetIntoRoller(diceSet);
         currentDiceSet = diceSet;
