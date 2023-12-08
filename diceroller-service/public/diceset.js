@@ -65,6 +65,7 @@ function addDiceSetToExplore(diceSet) {
 function saveDiceSet(diceSet) {
     const diceSetJSON = JSON.stringify(diceSet);
     localStorage.setItem('savedDiceSet', diceSetJSON);
+    saveSetToServer(diceSet);
 }
 
 function loadDiceSet() {
@@ -133,6 +134,7 @@ function addDice() {
 }
 
 async function saveSetToServer() {
+    // console.log('Sent DicSet');
     if (currentDiceSet) {
         try {
             const response = await fetch('/api/saveset', {
@@ -168,6 +170,7 @@ async function loadSetsFromServer() {
     sets.forEach(diceSet => {
         addDiceSetToExplore(diceSet);
     });
+    // console.log("Load DiceSets");
 }
 
 function rollDie(die) {
