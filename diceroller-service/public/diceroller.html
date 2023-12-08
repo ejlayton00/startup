@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial=scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="headerfooter.css">
+    <link rel="stylesheet" href="diceroller.css">
+    <script src="diceset.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dice Roller</h1>
+        <div class="menu-bar">
+            <a class="menu-button" href="diceroller.html">ROLL DICE</a>
+            <a class="menu-button" href="explore.html">EXPLORE</a>
+        </div>
+        <div class="user-buttons">
+            <div class="user-info" id="usernameDisplay"><h2>Temp User</h2></div>
+            <div class="logout-button"><a class="menu-button" href="index.html">LOGOUT</a></div>
+        </div>
+    </header>
+    <script>
+        updateLoggedInUser();
+    </script>
+    <main>
+        <div class="column"><h2>Dice</h2>
+            <div class="centered">
+                <label for="num-dice">Number of Dice:</label>
+                <input type="number" id="num-dice" min="0" max="20" step="1" value="0">
+            </div>
+            <div class="centered">
+                <label for="dice-type">Dice Type:</label>
+                <select id="dice-type">
+                    <option value="20">d20</option>
+                    <option value="12">d12</option>
+                    <option value="10">d10</option>
+                    <option value="8">d8</option>
+                    <option value="6">d6</option>
+                    <option value="4">d4</option>
+                </select>
+            </div>
+            <div class="centered">
+                <label for="modifier">Dice Modifier:</label>
+                <input type="number" id="modifier" min="-100" max="100" step="1" value="0">
+            </div>
+            <div class="centered">
+                <button onclick="addDice()">Add Dice</button>
+                <button onclick="removeAllDice()">Remove Dice</button>
+            </div>
+            <div id="dice-set-column">
+                <div id="showDice" class="image-grid">
+                </div>
+                <!-- show-modifier will update with addDice() function -->
+                <div class="roll-modifier">+5</div>
+            </div>
+            <div class="centered">
+                <button onclick="saveSetToServer()">Save Dice Set</button>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Roll Dice</h2>
+            <!--- rollDice() will use JavaScript to roll the dice added via AddDice(), which will then update the third column with the results of the rolls -->
+            <!-- Then, the table below will update to show the statistics of the roll. -->
+            <div class="centered"><button onclick="rollDice()">Roll Dice</button></div>
+
+            <table>
+                <tr>
+                    <td>Average</td>
+                    <td id="average">0</td>
+                </tr>
+                <tr>
+                    <td>Minimum</td>
+                    <td id="min">0</td>
+                </tr>
+                <tr>
+                    <td>Maximum</td>
+                    <td id="max">0</td>
+                </tr>
+                <tr>
+                    <td>Current Result</td>
+                    <td id="currentResult">0</td>
+                </tr>
+                <tr>
+                    <td>Chance of Rolling Higher than Current Result (%)</td>
+                    <td id="chance">0%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <h2>Dice Results</h2>
+
+            <div id="rollDice" class="image-grid">
+                <img src="./images/d4/d4-2.png" alt="2 on a d4" width="100" height="auto">
+                <img src="./images/d6/d6-5.png" alt="5 on a d6" width="100" height="auto">
+                <img src="./images/d8/d8-1.png" alt="1 on a d8" width="100" height="auto">
+                <img src="./images/d10/d10-3.png" alt="3 on a d10" width="100" height="auto">
+                <img src="./images/d12/d12-9.png" alt="9 on a d12" width="100" height="auto">
+                <img src="./images/d20/d20-18.png" alt="18 on a d20" width="100" height="auto">
+            </div>
+
+            <br />
+            <div class="roll-modifier">+5</div>
+            <div class="centered">=</div>
+            <div class="total-result" id="total-result">43</div>
+        </div>
+        <br><br><br>
+    </main>
+    <footer>
+        <span class="text-reset">Authors:</span>
+        <br />
+        <a href="https://github.com/ejlayton00/startup/tree/main/diceroller-html">Github</a>
+    </footer>
+
+    
+    <script>
+        let diceSet = loadDiceSet();
+        if (diceSet == null) {
+            diceSet = new DiceSet("User1", "October 1st, 2023", [4, 6, 8], +1)
+        }
+        loadDiceSetIntoRoller(diceSet);
+        currentDiceSet = diceSet;
+    </script>
+</body>
+</html>
