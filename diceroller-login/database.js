@@ -25,6 +25,7 @@ function getDicesets() {
         .sort({ dateSaved: -1 })
         .limit(6)
         .toArray();
+    return dicesets;
 }
 
 module.exports = { addDiceset, getDicesets };
@@ -32,5 +33,6 @@ module.exports = { addDiceset, getDicesets };
 console.log("Before tests");
 addDiceset({ "name": "test" });
 console.log("Between tests");
-getDicesets();
+const result = getDicesets()
+console.log(result);
 console.log("after tests");

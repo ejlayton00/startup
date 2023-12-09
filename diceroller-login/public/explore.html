@@ -6,7 +6,6 @@
     <title>Explore</title>
     <link rel="stylesheet" href="headerfooter.css">
     <link rel="stylesheet" href="explore.css">
-    <script src="diceset.js"></script>
 </head>
 <body>
     <header>
@@ -39,9 +38,10 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            loadSetsFromServer();
+        document.addEventListener("DOMContentLoaded", async () => {
+            await loadSetsFromServer();
         })
     </script>
+    <script src="diceset.js"></script>
 </body>
 </html>

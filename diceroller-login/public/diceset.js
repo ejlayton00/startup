@@ -158,10 +158,12 @@ async function loadSetsFromServer() {
     try {
         const response = await fetch('/api/loadsets');
         sets = await response.json();
+        console.log(sets);
 
         localStorage.setItem('savedSets', JSON.stringify(sets));
     } catch {
         const savedSets = localStorage.getItem('savedSets');
+        console.log(savedSets);
         if (savedSets) {
             sets = JSON.parse(savedSets);
         }
