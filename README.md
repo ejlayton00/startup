@@ -79,3 +79,9 @@ The following technologies will be used in this project.
     - This is a call to a third party endpoint
 - Added /loadsets and /saveset endpoints to manage saving and loading dice sets
 - All endpoints managed using fetch
+
+### Database
+- MongoDB Atlas database created
+- Endpoints in index.js finished
+- Added database.js to function as mongodb database
+- Diceset data now stored in mongo db
