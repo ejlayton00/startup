@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="headerfooter.css">
+    <link rel="stylesheet" href="explore.css">
+    <script src="diceset.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dice Roller</h1>
+        <div class="menu-bar">
+            <a class="menu-button" href="diceroller.html">ROLL DICE</a>
+            <a class="menu-button" href="explore.html">EXPLORE</a>
+        </div>
+        <div class="user-buttons">
+            <div class="user-info"><h2>Temp User</h2></div>
+            <div class="logout-button"><a class="menu-button" href="index.html">LOGOUT</a></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="explore-content">
+            <h2>Explore Saved Dice Sets</h2>
+            <div class="dice-set-list">
+                <!-- Example dice set entries, replace with dynamic data as the user scrolls -->
+                <!-- Add more entries as needed -->
+            </div>
+        </div>
+        <br><br><br>
+    </main>
+
+    <footer>
+        <span class="text-reset">Authors:</span>
+        <br />
+        <a href="https://github.com/ejlayton00/startup/tree/main/diceroller-html">Github</a>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadSetsFromServer();
+        })
+    </script>
+</body>
+</html>
