@@ -17,18 +17,18 @@ const userCollection = db.collection('user');
     process.exit(1);
 });
 
-function getUser(email) {
-    return userCollection.findOne({ email: email });
+function getUser(username) {
+    return userCollection.findOne({ username: username });
 }
 
 function getUserByToken(token) {
     return userCollection.findOne({ token: token });
 }
 
-async function createUser(email, password) {
+async function createUser(username, password) {
     const passwordHash = await bcrypt.hash(password, 10);
     const user = {
-        email: email,
+        username: username,
         password, passwordHash,
         token: uuid.v4(),
     };
