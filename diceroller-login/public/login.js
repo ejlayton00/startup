@@ -1,23 +1,58 @@
-function login() {
-    const nameEl = document.querySelector("#login-username");
-    localStorage.setItem("userName", nameEl.value);
+async function login() {
+    const username = document.querySelector("#login-username")?.value;
+    const password = document.querySelector("#login-password")?.value;
 
-    const passwordEl = document.querySelector("#login-password");
+    const response = await fetch(`/api/auth/login`, {
+        method: 'post',
+        body: JSON.stringify({ username: username, password: password}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
 
-    window.location.href = "diceroller.html";
-
-    // TODO: send to websocket
+    if (response.ok) {
+        localStorage.setItem("userName", username);
+        window.location.href = "diceroller.html";
+    } else {
+        const body = await response.json();
+        console.log("Error: " + body.msg);
+    }
 }  
 
-function register() {
-    const nameEl = document.querySelector("#signup-username");
-    localStorage.setItem("userName", nameEl.value);
+async function register() {    
+    const username = document.querySelector("#signup-username")?.value;
+    const password = document.querySelector("#signup-password")?.value;
 
-    const passwordEl = document.querySelector("#signup-password");
+    const response = await fetch(`/api/auth/create`, {
+        method: 'post',
+        body: JSON.stringify({ username: username, password: password}),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    });
 
-    window.location.href = "diceroller.html";
+    if (response.ok) {
+        localStorage.setItem("userName", username);
+        window.location.href = "diceroller.html";
+    } else {
+        const body = await response.json();
+        console.log("Error: " + body.msg);
+    }
+}
 
-    // TODO: send to websocket
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/'));
+}
+
+async function getUser(username) {
+    const response = await fetch(`/api/user/${username}`);
+    if (response.status === 200) {
+        return response.json();
+    }
+    return null;
 }
 
 function displayRandomImage() {
