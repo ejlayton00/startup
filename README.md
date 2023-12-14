@@ -85,3 +85,10 @@ The following technologies will be used in this project.
 - Endpoints in index.js finished
 - Added database.js to function as mongodb database
 - Diceset data now stored in mongo db
+
+### Login
+- Users now register with the database.
+    - Required some modification to index.html to make registration easy.
+- MongoDB stores credentials (users and dicesets).
+- Login now required before any usage of other pages.
+    - While this was required before, login must now succeed to do so.
