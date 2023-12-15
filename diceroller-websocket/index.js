@@ -5,7 +5,7 @@ const app = express();
 const DB = require('./database.js');
 const { peerProxy } = require('./peerProxy.js');
 
-const authCookieName = 'token';
+const authCookieName = 'diceroller-token';
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -26,6 +26,7 @@ apiRouter.post('/auth/create', async (req, res) => {
         res.status(409).send({ msg: 'Existing user' });
     } else {
         const user = await DB.createUser(req.body.username, req.body.password);
+        console.log(user);
         setAuthCookie(res, user.token);
         res.send({ id: user._id, });
     }
@@ -33,11 +34,14 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 apiRouter.post('/auth/login', async (req, res) => {
     const user = await DB.getUser(req.body.username);
+    if (user.passwordHash !== undefined) user.password = user.passwordHash;
     if (user) {
         if (await bcrypt.compare(req.body.password, user.password)) {
             setAuthCookie(res, user.token);
             res.send({ id: user._id });
             return;
+        } else {
+            console.log('Error: User not correctly logged in');
         }
     }
     res.status(401).send({ msg: 'Unauthorized' });
@@ -52,6 +56,7 @@ apiRouter.get('/user/:username', async (req, res) => {
     const user = await DB.getUser(req.params.username);
     if (user) {
         const token = req?.cookies.token;
+        console.log(token);
         res.send({ username: user.username, authenticated: token === user.token });
         return;
     }
@@ -62,8 +67,11 @@ const secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
 secureApiRouter.use(async (req, res, next) => {
-  authToken = req.cookies[authCookieName];
+  const authToken = req.cookies[authCookieName];
+  console.log(authCookieName, req.cookies);
+  console.log('Auth Token: ', authToken);
   const user = await DB.getUserByToken(authToken);
+  console.log('User: ', user);
   if (user) {
     next();
   } else {
@@ -78,7 +86,7 @@ apiRouter.get('/loadsets', async (_req, res) => {
 })
 
 apiRouter.post('/saveset', async (req, res) => {
-    DB.addDiceset(req.body);
+    await DB.addDiceset(req.body);
     const dicesets = await DB.getDicesets();
     dicesets = updateDicesets(req.body, dicesets);
     res.send(dicesets);

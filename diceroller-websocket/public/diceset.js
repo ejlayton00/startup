@@ -1,3 +1,7 @@
+const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+const DiceSetCreated = 'dicesetcreated';
+
 class DiceSet {
     constructor(owner, dateSaved, dice, modifier) {
         this.owner = owner;
@@ -143,6 +147,7 @@ async function saveSetToServer() {
                 body: JSON.stringify(currentDiceSet),
             });
 
+            broadcastEvent(storedUsername);
             const diceset = await response.json();
             localStorage.setItem('savedSets', JSON.stringify(diceset));
         } catch {
@@ -245,6 +250,35 @@ function calculateChance(totalResult, maximum) {
 
 function updateLoggedInUser() {
     const storedUsername = localStorage.getItem('userName');
+    console.log(storedUsername);
     const userNameElement = document.querySelector(".user-info h2");
     if (storedUsername) userNameElement.textContent = storedUsername;
 }
+
+function configureWebSocket() {
+    socket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data);
+        if (msg.type === DiceSetCreated) {
+            const playerName = data.playername;
+            const messageContainer = document.getElementById('websocket-messages');
+            const messageElement = document.createElement('p');
+            messageElement.textContent = `${playerName} created a diceset`;
+            messageContainer.appendChild(messageElement);
+        }
+    };
+}
+
+function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#messages');
+    chatText.innerHTML = `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(playername) {
+    const event = {
+        type: DiceSetCreated,
+        playername: playername
+    };
+    socket.send(JSON.stringify(event));
+}
+
+configureWebSocket();

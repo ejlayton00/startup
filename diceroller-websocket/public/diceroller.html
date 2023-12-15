@@ -6,7 +6,6 @@
     <title>Dice Roller</title>
     <link rel="stylesheet" href="headerfooter.css">
     <link rel="stylesheet" href="diceroller.css">
-    <script src="diceset.js"></script>
 </head>
 <body>
     <header>
@@ -20,9 +19,6 @@
             <div class="logout-button"><a class="menu-button" href="index.html">LOGOUT</a></div>
         </div>
     </header>
-    <script>
-        updateLoggedInUser();
-    </script>
     <main>
         <div class="column"><h2>Dice</h2>
             <div class="centered">
@@ -104,6 +100,10 @@
             <div class="centered">=</div>
             <div class="total-result" id="total-result">43</div>
         </div>
+        <div class="column">
+            <h2>Messages</h2>
+            <div id="websocket-messages"></div>
+        </div>
         <br><br><br>
     </main>
     <footer>
@@ -113,6 +113,10 @@
     </footer>
 
     
+    <script src="diceset.js"></script>
+    <script>
+        updateLoggedInUser();
+    </script>
     <script>
         let diceSet = loadDiceSet();
         if (diceSet == null) {
