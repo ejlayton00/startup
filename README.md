@@ -92,3 +92,9 @@ The following technologies will be used in this project.
 - MongoDB stores credentials (users and dicesets).
 - Login now required before any usage of other pages.
     - While this was required before, login must now succeed to do so.
+
+### Websocket
+- Backend now listens for websocket connection.
+- Frontend creates websocket connection.
+- Diceset creation events sent over websocket.
+- Diceset creation events displayed to app after being received by websocket.
